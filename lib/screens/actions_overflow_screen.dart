@@ -67,6 +67,7 @@ class _ActionsOverflowScreenState extends State<ActionsOverflowScreen> {
       appBar: CurvedAppBar(
         shape: CurvedAppBarShape.rounded,
         curveRadius: 28,
+        height: 60,
         backgroundColor: const Color(0xFF0D9488), // Teal 600
         foregroundColor: Colors.white,
         title: const Text(

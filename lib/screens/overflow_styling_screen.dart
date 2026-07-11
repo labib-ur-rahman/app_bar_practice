@@ -6,10 +6,7 @@ class PhotoItem {
   final String imageUrl;
   final String category;
 
-  const PhotoItem({
-    required this.imageUrl,
-    required this.category,
-  });
+  const PhotoItem({required this.imageUrl, required this.category});
 }
 
 class OverflowStylingScreen extends StatefulWidget {
@@ -21,12 +18,36 @@ class OverflowStylingScreen extends StatefulWidget {
 
 class _OverflowStylingScreenState extends State<OverflowStylingScreen> {
   final List<PhotoItem> _photos = const [
-    PhotoItem(imageUrl: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=300&q=80', category: 'Nature'),
-    PhotoItem(imageUrl: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=300&q=80', category: 'City'),
-    PhotoItem(imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', category: 'People'),
-    PhotoItem(imageUrl: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=300&q=80', category: 'Abstract'),
-    PhotoItem(imageUrl: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=300&q=80', category: 'Nature'),
-    PhotoItem(imageUrl: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=300&q=80', category: 'City'),
+    PhotoItem(
+      imageUrl:
+          'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=300&q=80',
+      category: 'Nature',
+    ),
+    PhotoItem(
+      imageUrl:
+          'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=300&q=80',
+      category: 'City',
+    ),
+    PhotoItem(
+      imageUrl:
+          'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+      category: 'People',
+    ),
+    PhotoItem(
+      imageUrl:
+          'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=300&q=80',
+      category: 'Abstract',
+    ),
+    PhotoItem(
+      imageUrl:
+          'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=300&q=80',
+      category: 'Nature',
+    ),
+    PhotoItem(
+      imageUrl:
+          'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=300&q=80',
+      category: 'City',
+    ),
   ];
 
   String _filterCategory = 'All';
@@ -44,8 +65,10 @@ class _OverflowStylingScreenState extends State<OverflowStylingScreen> {
       appBar: CurvedAppBar(
         shape: CurvedAppBarShape.rounded,
         curveRadius: 28,
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFF1E293B), // Dark slate
         foregroundColor: Colors.white,
+        height: 60,
         title: const Text(
           'Photo Vault',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
@@ -63,15 +86,18 @@ class _OverflowStylingScreenState extends State<OverflowStylingScreen> {
         // Overflow popup menu styling configuration
         overflowMenuColor: const Color(0xFF0F172A), // Dark slate popup body
         overflowMenuIconColor: Colors.white70,
-        overflowMenuTextStyle: const TextStyle(color: Colors.white, fontSize: 14),
+        overflowMenuTextStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+        ),
         actionItems: [
           CurvedAppBarAction(
             label: 'Grid View',
             icon: Iconsax.gallery,
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Grid mode active')),
-              );
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(const SnackBar(content: Text('Grid mode active')));
             },
           ),
           CurvedAppBarAction(
@@ -97,7 +123,10 @@ class _OverflowStylingScreenState extends State<OverflowStylingScreen> {
             icon: Iconsax.trash,
             // Styling this action individually to alert user
             menuIconColor: Colors.redAccent,
-            menuTextStyle: const TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),
+            menuTextStyle: const TextStyle(
+              color: Colors.redAccent,
+              fontWeight: FontWeight.bold,
+            ),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Album deleted successfully')),
@@ -126,7 +155,9 @@ class _OverflowStylingScreenState extends State<OverflowStylingScreen> {
                     selectedColor: const Color(0xFF1E293B),
                     labelStyle: TextStyle(
                       color: isSelected ? Colors.white : Colors.black87,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                      fontWeight: isSelected
+                          ? FontWeight.bold
+                          : FontWeight.normal,
                     ),
                     onSelected: (selected) {
                       setState(() {
@@ -167,7 +198,10 @@ class _OverflowStylingScreenState extends State<OverflowStylingScreen> {
                           errorBuilder: (context, error, stackTrace) {
                             return Container(
                               color: Colors.grey[200],
-                              child: const Icon(Iconsax.gallery, color: Colors.grey),
+                              child: const Icon(
+                                Iconsax.gallery,
+                                color: Colors.grey,
+                              ),
                             );
                           },
                         ),

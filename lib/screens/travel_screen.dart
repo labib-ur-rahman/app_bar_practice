@@ -33,57 +33,69 @@ class _TravelScreenState extends State<TravelScreen> {
   final List<TravelDestination> _destinations = const [
     TravelDestination(
       name: 'Santorini Sunset Caldera',
-      imageUrl: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80',
+      imageUrl:
+          'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80',
       location: 'Santorini, Greece',
       rating: 4.9,
       price: 240,
       category: 'Beaches',
-      description: 'Experience the stunning whitewashed buildings, blue domes, and breathtaking Aegean Sea views.',
+      description:
+          'Experience the stunning whitewashed buildings, blue domes, and breathtaking Aegean Sea views.',
     ),
     TravelDestination(
       name: 'Mount Fuji Snowy Peak',
-      imageUrl: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80',
+      imageUrl:
+          'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80',
       location: 'Honshu, Japan',
       rating: 4.8,
       price: 180,
       category: 'Mountains',
-      description: 'An iconic active volcano famous for its symmetrical snow-capped peak and scenic cherry blossom views.',
+      description:
+          'An iconic active volcano famous for its symmetrical snow-capped peak and scenic cherry blossom views.',
     ),
     TravelDestination(
       name: 'Amalfi Coast Paradise',
-      imageUrl: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=600&q=80',
+      imageUrl:
+          'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=600&q=80',
       location: 'Salerno, Italy',
       rating: 4.7,
       price: 310,
       category: 'Beaches',
-      description: 'A 50-kilometer stretch of coastline along the southern edge of Italy\'s Sorrentine Peninsula.',
+      description:
+          'A 50-kilometer stretch of coastline along the southern edge of Italy\'s Sorrentine Peninsula.',
     ),
     TravelDestination(
       name: 'Swiss Alps Ski Resort',
-      imageUrl: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=600&q=80',
+      imageUrl:
+          'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=600&q=80',
       location: 'Zermatt, Switzerland',
       rating: 4.9,
       price: 450,
       category: 'Mountains',
-      description: 'Soar through high mountain peaks, crystal-clear glacier lakes, and luxury Alpine ski valleys.',
+      description:
+          'Soar through high mountain peaks, crystal-clear glacier lakes, and luxury Alpine ski valleys.',
     ),
     TravelDestination(
       name: 'Kyoto Bamboo Forest',
-      imageUrl: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80',
+      imageUrl:
+          'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80',
       location: 'Kyoto, Japan',
       rating: 4.6,
       price: 120,
       category: 'Forests',
-      description: 'Walk through towering green stalks of bamboo rustling in the wind, a peaceful spiritual retreat.',
+      description:
+          'Walk through towering green stalks of bamboo rustling in the wind, a peaceful spiritual retreat.',
     ),
     TravelDestination(
       name: 'New York City Lights',
-      imageUrl: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80',
+      imageUrl:
+          'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80',
       location: 'New York, USA',
       rating: 4.5,
       price: 290,
       category: 'Cities',
-      description: 'The city that never sleeps. Bright billboard lights, skyscrapers, and rich Broadway culture.',
+      description:
+          'The city that never sleeps. Bright billboard lights, skyscrapers, and rich Broadway culture.',
     ),
   ];
 
@@ -104,10 +116,18 @@ class _TravelScreenState extends State<TravelScreen> {
         curveRadius: 36,
         title: const Text(
           'Explore Places',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, letterSpacing: 0.5),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            letterSpacing: 0.5,
+          ),
         ),
         subtitle: const Text('Discover your next vacation spot'),
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+        titleTextStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+        ),
         subtitleTextStyle: const TextStyle(color: Colors.white70, fontSize: 13),
         backgroundGradient: const LinearGradient(
           begin: Alignment.topLeft,
@@ -133,9 +153,9 @@ class _TravelScreenState extends State<TravelScreen> {
             label: 'Bookmarks',
             icon: Iconsax.archive_1,
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Viewed bookmarks')),
-              );
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(const SnackBar(content: Text('Viewed bookmarks')));
             },
           ),
         ],
@@ -144,7 +164,7 @@ class _TravelScreenState extends State<TravelScreen> {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 12.0),
             child: SizedBox(
-              height: 38,
+              height: 46,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -163,20 +183,31 @@ class _TravelScreenState extends State<TravelScreen> {
                       borderRadius: BorderRadius.circular(20),
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 200),
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 8,
+                        ),
                         decoration: BoxDecoration(
-                          color: isSelected ? Colors.white : Colors.white.withOpacity(0.12),
+                          color: isSelected
+                              ? Colors.white
+                              : Colors.white.withOpacity(0.12),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                            color: isSelected ? Colors.white : Colors.white.withOpacity(0.08),
+                            color: isSelected
+                                ? Colors.white
+                                : Colors.white.withOpacity(0.08),
                           ),
                         ),
                         child: Center(
                           child: Text(
                             cat,
                             style: TextStyle(
-                              color: isSelected ? const Color(0xFF0F766E) : Colors.white70,
-                              fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
+                              color: isSelected
+                                  ? const Color(0xFF0F766E)
+                                  : Colors.white70,
+                              fontWeight: isSelected
+                                  ? FontWeight.bold
+                                  : FontWeight.w500,
                               fontSize: 13,
                             ),
                           ),
@@ -204,7 +235,10 @@ class _TravelScreenState extends State<TravelScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(24),
-                      border: Border.all(color: const Color(0xFFE2E8F0), width: 1),
+                      border: Border.all(
+                        color: const Color(0xFFE2E8F0),
+                        width: 1,
+                      ),
                       boxShadow: [
                         BoxShadow(
                           color: const Color(0xFF0F172A).withOpacity(0.03),
@@ -229,7 +263,11 @@ class _TravelScreenState extends State<TravelScreen> {
                                   height: 200,
                                   color: Colors.teal.shade50,
                                   child: const Center(
-                                    child: Icon(Iconsax.image, size: 40, color: Colors.teal),
+                                    child: Icon(
+                                      Iconsax.image,
+                                      size: 40,
+                                      color: Colors.teal,
+                                    ),
                                   ),
                                 );
                               },
@@ -238,15 +276,24 @@ class _TravelScreenState extends State<TravelScreen> {
                               top: 14,
                               right: 14,
                               child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 6,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF0F172A).withOpacity(0.75),
+                                  color: const Color(
+                                    0xFF0F172A,
+                                  ).withOpacity(0.75),
                                   borderRadius: BorderRadius.circular(30),
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    const Icon(Iconsax.star1, color: Colors.amber, size: 14),
+                                    const Icon(
+                                      Iconsax.star1,
+                                      color: Colors.amber,
+                                      size: 14,
+                                    ),
                                     const SizedBox(width: 4),
                                     Text(
                                       destination.rating.toString(),
@@ -268,7 +315,8 @@ class _TravelScreenState extends State<TravelScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Expanded(
                                     child: Text(
@@ -296,17 +344,30 @@ class _TravelScreenState extends State<TravelScreen> {
                               const SizedBox(height: 8),
                               Row(
                                 children: [
-                                  Icon(Iconsax.location, size: 16, color: Colors.grey[500]),
+                                  Icon(
+                                    Iconsax.location,
+                                    size: 16,
+                                    color: Colors.grey[500],
+                                  ),
                                   const SizedBox(width: 4),
                                   Text(
                                     destination.location,
-                                    style: TextStyle(color: Colors.grey[600], fontSize: 13, fontWeight: FontWeight.w500),
+                                    style: TextStyle(
+                                      color: Colors.grey[600],
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                   const SizedBox(width: 10),
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical: 4,
+                                    ),
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFF0F766E).withOpacity(0.08),
+                                      color: const Color(
+                                        0xFF0F766E,
+                                      ).withOpacity(0.08),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Text(
@@ -323,7 +384,11 @@ class _TravelScreenState extends State<TravelScreen> {
                               const SizedBox(height: 12),
                               Text(
                                 destination.description,
-                                style: TextStyle(color: Colors.grey[600], fontSize: 14, height: 1.5),
+                                style: TextStyle(
+                                  color: Colors.grey[600],
+                                  fontSize: 14,
+                                  height: 1.5,
+                                ),
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                               ),

@@ -8,40 +8,38 @@ class TestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CurvedAppBar(
-        title: const Text('Dashboard'),
-        backgroundGradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Color(0xFFfc00ff), Color(0xFF00dbde)],
-        ),
+        automaticallyImplyLeading: false,
+        title: const Text('Orders'),
+        subtitle: const Text('Today'),
+        backgroundColor: const Color(0xFF4079FF),
+        foregroundColor: Colors.white,
+        height: 60,
       ),
-      body: CurvedBody(
-        child: GridView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 16,
-            mainAxisSpacing: 16,
-            childAspectRatio: 1.0,
-          ),
-          itemCount: _colors.length,
-          itemBuilder: (context, index) {
-            final color = _colors[index];
-            return Container(
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.2),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-            );
-          },
+      body: GridView.builder(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
+          childAspectRatio: 1.0,
         ),
+        itemCount: _colors.length,
+        itemBuilder: (context, index) {
+          final color = _colors[index];
+          return Container(
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: color.withValues(alpha: 0.2),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

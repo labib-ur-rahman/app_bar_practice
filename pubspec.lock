@@ -53,10 +53,10 @@ packages:
     dependency: "direct main"
     description:
       name: curved_app_bar
-      sha256: b483f45d384a052be2d49ba03a25e9bb8a75556c2408281a9b554cf59413b70f
+      sha256: "07c0a5b4487429b08d9a102e16741046cdd6065f7d672af62686fe009c42c47a"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.6"
   fake_async:
     dependency: transitive
     description:

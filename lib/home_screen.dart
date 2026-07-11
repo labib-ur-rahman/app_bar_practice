@@ -76,6 +76,18 @@ class HomePage extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 children: [
                   ListTile(
+                    leading: const Icon(Iconsax.user),
+                    title: const Text('Profile Examples'),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ProfileScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  ListTile(
                     leading: const Icon(Iconsax.home),
                     title: const Text('Home Examples'),
                     onTap: () {
@@ -88,7 +100,9 @@ class HomePage extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).pop();
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const ColorsGridScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => const ColorsGridScreen(),
+                        ),
                       );
                     },
                   ),
@@ -125,16 +139,14 @@ class HomePage extends StatelessWidget {
         ),
       ),
       appBar: CurvedAppBar(
-        animate: true,
+        animate: false,
         shape: CurvedAppBarShape.invertedRounded,
         curveRadius: 36,
         title: const Text(
           'Curved App Bar Examples',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
-        subtitle: const Text(
-          'Interactive showcase of the curved_app_bar package',
-        ),
+        subtitle: const Text('Interactive showcase'),
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 20,
@@ -153,7 +165,7 @@ class HomePage extends StatelessWidget {
                 backgroundColor: Colors.white.withOpacity(0.2),
                 foregroundColor: Colors.white,
               ),
-              icon: const Icon(Iconsax.menu, size: 20),
+              icon: const Icon(Icons.menu, size: 20),
             );
           },
         ),
