@@ -23,15 +23,251 @@ class BottomContentScreen extends StatefulWidget {
   State<BottomContentScreen> createState() => _BottomContentScreenState();
 }
 
-class _BottomContentScreenState extends State<BottomContentScreen> with SingleTickerProviderStateMixin {
+class _BottomContentScreenState extends State<BottomContentScreen>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   final List<Transaction> _transactions = const [
-    Transaction(title: 'Salary Credit', date: 'Jul 08, 2026', amount: 3200.00, isIncome: true),
-    Transaction(title: 'Grocery Store Store', date: 'Jul 07, 2026', amount: 124.50, isIncome: false),
-    Transaction(title: 'Freelance Design Project', date: 'Jul 05, 2026', amount: 450.00, isIncome: true),
-    Transaction(title: 'Electricity Power Bill', date: 'Jul 04, 2026', amount: 89.20, isIncome: false),
-    Transaction(title: 'Online Video Streaming', date: 'Jul 02, 2026', amount: 14.99, isIncome: false),
+    Transaction(
+      title: 'Salary Credit',
+      date: 'Jul 08, 2026',
+      amount: 3200.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Grocery Store Store',
+      date: 'Jul 07, 2026',
+      amount: 124.50,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Freelance Design Project',
+      date: 'Jul 05, 2026',
+      amount: 450.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Electricity Power Bill',
+      date: 'Jul 04, 2026',
+      amount: 89.20,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Online Video Streaming',
+      date: 'Jul 02, 2026',
+      amount: 14.99,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Salary Credit',
+      date: 'Jul 08, 2026',
+      amount: 3200.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Grocery Store Store',
+      date: 'Jul 07, 2026',
+      amount: 124.50,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Freelance Design Project',
+      date: 'Jul 05, 2026',
+      amount: 450.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Electricity Power Bill',
+      date: 'Jul 04, 2026',
+      amount: 89.20,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Online Video Streaming',
+      date: 'Jul 02, 2026',
+      amount: 14.99,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Salary Credit',
+      date: 'Jul 08, 2026',
+      amount: 3200.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Grocery Store Store',
+      date: 'Jul 07, 2026',
+      amount: 124.50,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Freelance Design Project',
+      date: 'Jul 05, 2026',
+      amount: 450.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Electricity Power Bill',
+      date: 'Jul 04, 2026',
+      amount: 89.20,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Online Video Streaming',
+      date: 'Jul 02, 2026',
+      amount: 14.99,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Salary Credit',
+      date: 'Jul 08, 2026',
+      amount: 3200.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Grocery Store Store',
+      date: 'Jul 07, 2026',
+      amount: 124.50,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Freelance Design Project',
+      date: 'Jul 05, 2026',
+      amount: 450.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Electricity Power Bill',
+      date: 'Jul 04, 2026',
+      amount: 89.20,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Online Video Streaming',
+      date: 'Jul 02, 2026',
+      amount: 14.99,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Salary Credit',
+      date: 'Jul 08, 2026',
+      amount: 3200.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Grocery Store Store',
+      date: 'Jul 07, 2026',
+      amount: 124.50,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Freelance Design Project',
+      date: 'Jul 05, 2026',
+      amount: 450.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Electricity Power Bill',
+      date: 'Jul 04, 2026',
+      amount: 89.20,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Online Video Streaming',
+      date: 'Jul 02, 2026',
+      amount: 14.99,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Salary Credit',
+      date: 'Jul 08, 2026',
+      amount: 3200.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Grocery Store Store',
+      date: 'Jul 07, 2026',
+      amount: 124.50,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Freelance Design Project',
+      date: 'Jul 05, 2026',
+      amount: 450.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Electricity Power Bill',
+      date: 'Jul 04, 2026',
+      amount: 89.20,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Online Video Streaming',
+      date: 'Jul 02, 2026',
+      amount: 14.99,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Salary Credit',
+      date: 'Jul 08, 2026',
+      amount: 3200.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Grocery Store Store',
+      date: 'Jul 07, 2026',
+      amount: 124.50,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Freelance Design Project',
+      date: 'Jul 05, 2026',
+      amount: 450.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Electricity Power Bill',
+      date: 'Jul 04, 2026',
+      amount: 89.20,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Online Video Streaming',
+      date: 'Jul 02, 2026',
+      amount: 14.99,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Salary Credit',
+      date: 'Jul 08, 2026',
+      amount: 3200.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Grocery Store Store',
+      date: 'Jul 07, 2026',
+      amount: 124.50,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Freelance Design Project',
+      date: 'Jul 05, 2026',
+      amount: 450.00,
+      isIncome: true,
+    ),
+    Transaction(
+      title: 'Electricity Power Bill',
+      date: 'Jul 04, 2026',
+      amount: 89.20,
+      isIncome: false,
+    ),
+    Transaction(
+      title: 'Online Video Streaming',
+      date: 'Jul 02, 2026',
+      amount: 14.99,
+      isIncome: false,
+    ),
   ];
 
   @override
@@ -69,23 +305,37 @@ class _BottomContentScreenState extends State<BottomContentScreen> with SingleTi
           icon: const Icon(Iconsax.arrow_left_2, size: 16),
         ),
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(60),
+          preferredSize: const Size.fromHeight(70),
           child: Column(
             children: [
-              TabBar(
-                controller: _tabController,
-                indicatorColor: Colors.white,
-                indicatorWeight: 3,
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.white70,
-                labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                tabs: const [
-                  Tab(text: 'All Trx'),
-                  Tab(text: 'Income'),
-                  Tab(text: 'Expenses'),
-                ],
+              Container(
+                margin: const EdgeInsets.only(left: 20, right: 20, top: 8),
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: TabBar(
+                  controller: _tabController,
+                  dividerColor: Colors.transparent,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicator: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  labelColor: const Color(0xFF0F766E),
+                  unselectedLabelColor: Colors.white,
+                  labelStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                  tabs: const [
+                    Tab(text: 'All Trx', height: 40),
+                    Tab(text: 'Income', height: 40),
+                    Tab(text: 'Expenses', height: 40),
+                  ],
+                ),
               ),
-              const SizedBox(height: 8),
             ],
           ),
         ),
@@ -94,8 +344,12 @@ class _BottomContentScreenState extends State<BottomContentScreen> with SingleTi
         controller: _tabController,
         children: [
           _buildTransactionList(_transactions),
-          _buildTransactionList(_transactions.where((t) => t.isIncome).toList()),
-          _buildTransactionList(_transactions.where((t) => !t.isIncome).toList()),
+          _buildTransactionList(
+            _transactions.where((t) => t.isIncome).toList(),
+          ),
+          _buildTransactionList(
+            _transactions.where((t) => !t.isIncome).toList(),
+          ),
         ],
       ),
     );
@@ -118,11 +372,16 @@ class _BottomContentScreenState extends State<BottomContentScreen> with SingleTi
             border: Border.all(color: const Color(0xFFE2E8F0)),
           ),
           child: ListTile(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 4,
+            ),
             leading: Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: t.isIncome ? Colors.green.withOpacity(0.1) : Colors.redAccent.withOpacity(0.1),
+                color: t.isIncome
+                    ? Colors.green.withOpacity(0.1)
+                    : Colors.redAccent.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -133,7 +392,11 @@ class _BottomContentScreenState extends State<BottomContentScreen> with SingleTi
             ),
             title: Text(
               t.title,
-              style: const TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF0F172A), fontSize: 15),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF0F172A),
+                fontSize: 15,
+              ),
             ),
             subtitle: Text(
               t.date,

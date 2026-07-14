@@ -65,7 +65,7 @@ class _OverflowStylingScreenState extends State<OverflowStylingScreen> {
       appBar: CurvedAppBar(
         shape: CurvedAppBarShape.rounded,
         curveRadius: 28,
-        automaticallyImplyLeading: false,
+        // automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFF1E293B), // Dark slate
         foregroundColor: Colors.white,
         height: 60,
@@ -73,15 +73,15 @@ class _OverflowStylingScreenState extends State<OverflowStylingScreen> {
           'Photo Vault',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
-        subtitle: const Text('Overflow Styling Showcase'),
-        backButton: IconButton.filledTonal(
-          onPressed: () => Navigator.of(context).maybePop(),
-          style: IconButton.styleFrom(
-            backgroundColor: Colors.white.withOpacity(0.2),
-            foregroundColor: Colors.white,
-          ),
-          icon: const Icon(Iconsax.arrow_left_2, size: 16),
-        ),
+        // subtitle: const Text('Overflow Styling Showcase'),
+        // backButton: IconButton.filledTonal(
+        //   onPressed: () => Navigator.of(context).maybePop(),
+        //   style: IconButton.styleFrom(
+        //     backgroundColor: Colors.white.withOpacity(0.2),
+        //     foregroundColor: Colors.white,
+        //   ),
+        //   icon: const Icon(Iconsax.arrow_left_2, size: 16),
+        // ),
         maxVisibleActionItems: 1,
         // Overflow popup menu styling configuration
         overflowMenuColor: const Color(0xFF0F172A), // Dark slate popup body

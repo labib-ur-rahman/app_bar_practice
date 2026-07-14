@@ -25,10 +25,30 @@ class CustomButtonsScreen extends StatefulWidget {
 
 class _CustomButtonsScreenState extends State<CustomButtonsScreen> {
   final List<Appliance> _appliances = [
-    Appliance(name: 'Ceiling Lamp', icon: Iconsax.lamp_on, isOn: true, level: 0.8),
-    Appliance(name: 'Living AC', icon: Iconsax.wind, isOn: false, level: 0.22), // 22 degrees
-    Appliance(name: 'Smart TV', icon: Iconsax.monitor, isOn: true, level: 0.3), // 30% volume
-    Appliance(name: 'Sound System', icon: Iconsax.volume_high, isOn: false, level: 0.5),
+    Appliance(
+      name: 'Ceiling Lamp',
+      icon: Iconsax.lamp_on,
+      isOn: true,
+      level: 0.8,
+    ),
+    Appliance(
+      name: 'Living AC',
+      icon: Iconsax.wind,
+      isOn: false,
+      level: 0.22,
+    ), // 22 degrees
+    Appliance(
+      name: 'Smart TV',
+      icon: Iconsax.monitor,
+      isOn: true,
+      level: 0.3,
+    ), // 30% volume
+    Appliance(
+      name: 'Sound System',
+      icon: Iconsax.volume_high,
+      isOn: false,
+      level: 0.5,
+    ),
   ];
 
   @override
@@ -44,7 +64,11 @@ class _CustomButtonsScreenState extends State<CustomButtonsScreen> {
               decoration: BoxDecoration(color: Color(0xFF0F172A)),
               child: Text(
                 'Smart Drawer',
-                style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             ListTile(
@@ -55,8 +79,9 @@ class _CustomButtonsScreenState extends State<CustomButtonsScreen> {
           ],
         ),
       ),
+      extendBodyBehindAppBar: true,
       appBar: CurvedAppBar(
-        shape: CurvedAppBarShape.rounded,
+        shape: CurvedAppBarShape.invertedRounded,
         curveRadius: 30,
         backgroundColor: const Color(0xFF0F172A), // Slate 900
         foregroundColor: Colors.white,
@@ -64,7 +89,7 @@ class _CustomButtonsScreenState extends State<CustomButtonsScreen> {
           'Smart Home',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
-        subtitle: const Text('Custom Back & Drawer Buttons Demo'),
+        // subtitle: const Text('Custom Back & Drawer Buttons Demo'),
         automaticallyImplyLeading: true,
         // Override back button with a beautiful glass-like border button
         backButton: IconButton.filledTonal(
@@ -107,7 +132,11 @@ class _CustomButtonsScreenState extends State<CustomButtonsScreen> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(24),
-              border: Border.all(color: appliance.isOn ? const Color(0xFF38BDF8).withOpacity(0.3) : const Color(0xFFE2E8F0)),
+              border: Border.all(
+                color: appliance.isOn
+                    ? const Color(0xFF38BDF8).withOpacity(0.3)
+                    : const Color(0xFFE2E8F0),
+              ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.02),
@@ -125,12 +154,16 @@ class _CustomButtonsScreenState extends State<CustomButtonsScreen> {
                     Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: appliance.isOn ? const Color(0xFF38BDF8).withOpacity(0.1) : Colors.grey[100],
+                        color: appliance.isOn
+                            ? const Color(0xFF38BDF8).withOpacity(0.1)
+                            : Colors.grey[100],
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         appliance.icon,
-                        color: appliance.isOn ? const Color(0xFF0EA5E9) : Colors.grey[500],
+                        color: appliance.isOn
+                            ? const Color(0xFF0EA5E9)
+                            : Colors.grey[500],
                         size: 24,
                       ),
                     ),
@@ -148,24 +181,36 @@ class _CustomButtonsScreenState extends State<CustomButtonsScreen> {
                 const Spacer(),
                 Text(
                   appliance.name,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF0F172A)),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF0F172A),
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   appliance.isOn
                       ? (appliance.name == 'Living AC'
-                          ? '${(appliance.level * 10 + 16).toInt()}°C'
-                          : '${(appliance.level * 100).toInt()}% Intensity')
+                            ? '${(appliance.level * 10 + 16).toInt()}°C'
+                            : '${(appliance.level * 100).toInt()}% Intensity')
                       : 'Off',
-                  style: TextStyle(color: Colors.grey[500], fontSize: 12, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 if (appliance.isOn)
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       trackHeight: 3,
-                      thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6),
-                      overlayShape: const RoundSliderOverlayShape(overlayRadius: 12),
+                      thumbShape: const RoundSliderThumbShape(
+                        enabledThumbRadius: 6,
+                      ),
+                      overlayShape: const RoundSliderOverlayShape(
+                        overlayRadius: 12,
+                      ),
                     ),
                     child: Slider(
                       value: appliance.level,
@@ -181,7 +226,7 @@ class _CustomButtonsScreenState extends State<CustomButtonsScreen> {
             ),
           );
         },
-      ),
+      ).withCurvedBody(),
     );
   }
 }

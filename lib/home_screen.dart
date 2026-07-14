@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
+
       backgroundColor: const Color(0xFFF8FAFC), // Modern slate-grey background
       drawer: Drawer(
         child: Column(
@@ -143,8 +144,16 @@ class HomePage extends StatelessWidget {
         shape: CurvedAppBarShape.invertedRounded,
         curveRadius: 36,
         title: const Text(
-          'Curved App Bar Examples',
+          'Curved App Bar',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        backgroundGradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xFF8B5CF6), // Violet 500
+            Color(0xFFEC4899), // Pink 500
+          ],
         ),
         subtitle: const Text('Interactive showcase'),
         titleTextStyle: const TextStyle(
@@ -153,7 +162,7 @@ class HomePage extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
         subtitleTextStyle: const TextStyle(color: Colors.white70, fontSize: 12),
-        backgroundColor: const Color.fromARGB(255, 111, 0, 255),
+        // backgroundColor: const Color.fromARGB(255, 111, 0, 255),
         foregroundColor: Colors.white,
         maxVisibleActionItems: 2,
         // Custom Drawer button style on CurvedAppBar
@@ -172,7 +181,7 @@ class HomePage extends StatelessWidget {
         actionItems: [
           CurvedAppBarAction(
             label: 'Info',
-            icon: Iconsax.info_circle,
+            icon: Iconsax.setting_5,
             onPressed: () {
               showAboutDialog(
                 context: context,
@@ -208,31 +217,22 @@ class _HomeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final destinations = [
       _Destination(
-        title: 'Travel Explorer',
+        title: 'Visibility and Animation',
         subtitle:
-            'Rounded AppBar with a warm gradient, category filter chips bottom widget, and search action.',
-        tag: 'Gradient + Bottom Chips',
-        icon: Iconsax.discover,
-        iconColor: const Color(0xFF0D9488), // Teal
-        screen: const TravelScreen(),
+            'Immersive eBook reader showcasing dynamic visible showing/collapsing triggers and slide curves.',
+        tag: 'Visible Toggle + eBook Reader',
+        icon: Iconsax.eye,
+        iconColor: const Color(0xFF4F46E5), // Indigo
+        screen: const VisibilityAnimationScreen(),
       ),
       _Destination(
-        title: 'Gourmet Bites Delivery',
+        title: 'Bottom Content TabBar',
         subtitle:
-            'Inverted rounded app bar with solid color, custom back button, and content extending behind.',
-        tag: 'Inverted + Solid Color',
-        icon: Iconsax.shop,
-        iconColor: const Color(0xFFD84315), // Deep Orange
-        screen: const FoodDeliveryScreen(),
-      ),
-      _Destination(
-        title: 'Workspace Tasks',
-        subtitle:
-            'Rounded app bar with automatic action overflow into popup menu, styled menu, and active progress bar.',
-        tag: 'Actions Overflow + Progress',
-        icon: Iconsax.task_square,
-        iconColor: const Color(0xFF37474F), // Slate Grey
-        screen: const TaskManagerScreen(),
+            'Finance transaction ledger incorporating a full PreferredSize TabBar inside the bottom parameter of the app bar.',
+        tag: 'PreferredSize TabBar + Finance',
+        icon: Iconsax.wallet,
+        iconColor: const Color(0xFF0F766E), // Dark Teal
+        screen: const BottomContentScreen(),
       ),
       _Destination(
         title: 'User Profile Settings',
@@ -244,6 +244,42 @@ class _HomeContent extends StatelessWidget {
         screen: const ProfileScreen(),
       ),
       _Destination(
+        title: 'Actions and Overflow Menu',
+        subtitle:
+            'Contact organizer with search filter fields, showing how multiple actions automatically pack into a three-dot popover.',
+        tag: 'ActionItems + Contacts',
+        icon: Iconsax.user_add,
+        iconColor: const Color(0xFF0D9488), // Teal
+        screen: const ActionsOverflowScreen(),
+      ),
+      _Destination(
+        title: 'Gourmet Bites Delivery',
+        subtitle:
+            'Inverted rounded app bar with solid color, custom back button, and content extending behind.',
+        tag: 'Inverted + Solid Color',
+        icon: Iconsax.shop,
+        iconColor: const Color(0xFFD84315), // Deep Orange
+        screen: const FoodDeliveryScreen(),
+      ),
+      _Destination(
+        title: 'Overflow Menu Styling',
+        subtitle:
+            'Photo vault demonstrating custom color, icons, and text styles in the popup menu (including danger red text).',
+        tag: 'Custom Popup + Photo Grid',
+        icon: Iconsax.gallery,
+        iconColor: const Color(0xFF1E293B), // Dark Slate
+        screen: const OverflowStylingScreen(),
+      ),
+      _Destination(
+        title: 'Custom Back & Drawer Buttons',
+        subtitle:
+            'Smart home controller showcasing customized, glassmorphic leading back buttons and drawer toggles.',
+        tag: 'Styled Controls + Smart Home',
+        icon: Iconsax.home,
+        iconColor: const Color(0xFF0EA5E9), // Light Blue
+        screen: const CustomButtonsScreen(),
+      ),
+      _Destination(
         title: 'Color Palette Grid',
         subtitle:
             'Inverted rounded app bar using extendBodyBehindAppBar and the layout-aware CurvedBody widget to render a 3-column color container grid.',
@@ -251,6 +287,24 @@ class _HomeContent extends StatelessWidget {
         icon: Iconsax.colorfilter,
         iconColor: const Color(0xFF6B21A8), // Purple
         screen: const ColorsGridScreen(),
+      ),
+      _Destination(
+        title: 'Travel Explorer',
+        subtitle:
+            'Rounded AppBar with a warm gradient, category filter chips bottom widget, and search action.',
+        tag: 'Gradient + Bottom Chips',
+        icon: Iconsax.discover,
+        iconColor: const Color(0xFF0D9488), // Teal
+        screen: const TravelScreen(),
+      ),
+      _Destination(
+        title: 'Workspace Tasks',
+        subtitle:
+            'Rounded app bar with automatic action overflow into popup menu, styled menu, and active progress bar.',
+        tag: 'Actions Overflow + Progress',
+        icon: Iconsax.task_square,
+        iconColor: const Color(0xFF37474F), // Slate Grey
+        screen: const TaskManagerScreen(),
       ),
       _Destination(
         title: 'Solid Color AppBar',
@@ -278,51 +332,6 @@ class _HomeContent extends StatelessWidget {
         icon: Iconsax.flash,
         iconColor: const Color(0xFFEA580C), // Orange
         screen: const InvertedRoundedScreen(),
-      ),
-      _Destination(
-        title: 'Custom Back & Drawer Buttons',
-        subtitle:
-            'Smart home controller showcasing customized, glassmorphic leading back buttons and drawer toggles.',
-        tag: 'Styled Controls + Smart Home',
-        icon: Iconsax.home,
-        iconColor: const Color(0xFF0EA5E9), // Light Blue
-        screen: const CustomButtonsScreen(),
-      ),
-      _Destination(
-        title: 'Actions and Overflow Menu',
-        subtitle:
-            'Contact organizer with search filter fields, showing how multiple actions automatically pack into a three-dot popover.',
-        tag: 'ActionItems + Contacts',
-        icon: Iconsax.user_add,
-        iconColor: const Color(0xFF0D9488), // Teal
-        screen: const ActionsOverflowScreen(),
-      ),
-      _Destination(
-        title: 'Overflow Menu Styling',
-        subtitle:
-            'Photo vault demonstrating custom color, icons, and text styles in the popup menu (including danger red text).',
-        tag: 'Custom Popup + Photo Grid',
-        icon: Iconsax.gallery,
-        iconColor: const Color(0xFF1E293B), // Dark Slate
-        screen: const OverflowStylingScreen(),
-      ),
-      _Destination(
-        title: 'Bottom Content TabBar',
-        subtitle:
-            'Finance transaction ledger incorporating a full PreferredSize TabBar inside the bottom parameter of the app bar.',
-        tag: 'PreferredSize TabBar + Finance',
-        icon: Iconsax.wallet,
-        iconColor: const Color(0xFF0F766E), // Dark Teal
-        screen: const BottomContentScreen(),
-      ),
-      _Destination(
-        title: 'Visibility and Animation',
-        subtitle:
-            'Immersive eBook reader showcasing dynamic visible showing/collapsing triggers and slide curves.',
-        tag: 'Visible Toggle + eBook Reader',
-        icon: Iconsax.eye,
-        iconColor: const Color(0xFF4F46E5), // Indigo
-        screen: const VisibilityAnimationScreen(),
       ),
       _Destination(
         title: 'Test Playground',
